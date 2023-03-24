@@ -45,4 +45,8 @@ mysql -h [remote_server_ip] -u [username] -p
 ```
 Show databases;
 ```
+If you see an output similar to the below image, then you have successfully completed this project – you have deployed a fully functional MySQL Client-Server set up.
+Well Done! You are getting there gradually. You can further play around with this set up and practice in creating/dropping databases & tables and inserting/selecting records to and from them.
+![Screenshot (92)](https://user-images.githubusercontent.com/111396874/227508796-114699be-5f84-4a22-835a-9d8b79fa998a.png)
+
 
