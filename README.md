@@ -42,5 +42,7 @@ You can use the command below
 mysql -h [remote_server_ip] -u [username] -p
 ```
 * Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
-
+```
+Show databases;
+```
 
