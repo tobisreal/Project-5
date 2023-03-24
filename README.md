@@ -25,12 +25,22 @@ Server A name - `mysql server`
 Server B name - `mysql client`
 ```
 
-* On mysql server Linux Server install MySQL Server software.
-* On mysql client Linux Server install MySQL Client software.
+* On mysql server Linux Server install MySQL Server software. ``sudo apt-get install mysql-server``
+
+* On mysql client Linux Server install MySQL Client software. ``sudo apt-get install mysql-client``
+
 * By default, both of your EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses. Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default, so you will have to open it by creating a new entry in ‘Inbound rules’ in ‘mysql server’ Security Groups. For extra security, do not allow all IP addresses to reach your ‘mysql server’ – allow access only to the specific local IP address of your ‘mysql client’.
 * You might need to configure MySQL server to allow connections from remote hosts.
 ```
 sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
+Replace ‘127.0.0.1’ to ‘0.0.0.0’ like this:
+![Screenshot (91)](https://user-images.githubusercontent.com/111396874/227394122-199cf8bb-5998-4e2d-a55b-153e26207354.png)
+* From mysql client Linux Server connect remotely to mysql server Database Engine without using SSH. You must use the mysql utility to perform this action.
+You can use the command below
+```
+mysql -h [remote_server_ip] -u [username] -p
+```
+* Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
 
 
